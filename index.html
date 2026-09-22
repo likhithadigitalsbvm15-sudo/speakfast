@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpeakFast English - తెలుగు ద్వారా సులభంగా ఇంగ్లీష్ నేర్చుకోండి</title>
+  <meta name="description" content="తెలుగు ద్వారా ఇంగ్లీష్ మాట్లాడటం సులభంగా నేర్చుకోండి. రోజువారీ వాక్యాలు, సరైన ఉచ్చారణ ఆడియో, మరియు ప్రాక్టీస్ క్విజ్.">
+  <meta name="keywords" content="learn english through telugu, spoken english telugu, english daily sentences telugu, telugu to english learning app">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #1e293b;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #334155;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links a {
+      color: #94a3b8;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+    .container {
+      max-width: 800px;
+      width: 92%;
+      margin: 24px auto;
+      flex: 1;
+    }
+    .hero-banner {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .hero-banner h1 {
+      font-size: 28px;
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+    .hero-banner p {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+    .tab-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      background: #1e293b;
+      padding: 6px;
+      border-radius: 10px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 12px;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-weight: bold;
+      font-size: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .tab-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #334155;
+      margin-bottom: 20px;
+    }
+    .sentence-item {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sentence-texts .telugu {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+    .sentence-texts .english {
+      font-size: 17px;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+    .speak-btn {
+      background: #0284c7;
+      border: none;
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+    .speak-btn:hover {
+      background: #0369a1;
+      transform: scale(1.05);
+    }
+    .quiz-question {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #f8fafc;
+    }
+    .quiz-question span {
+      color: #f59e0b;
+      font-weight: bold;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .opt-btn {
+      background: #0f172a;
+      border: 1px solid #475569;
+      color: #f8fafc;
+      padding: 14px;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .opt-btn:hover {
+      border-color: #38bdf8;
+    }
+    .score-badge {
+      text-align: center;
+      font-size: 16px;
+      color: #10b981;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    footer {
+      background: #1e293b;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #334155;
+      margin-top: auto;
+    }
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .footer-links a:hover {
+      color: #38bdf8;
+    }
+    footer p {
+      color: #64748b;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 50;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-box {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      border: 1px solid #475569;
+      position: relative;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 20px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🗣️ SpeakFast English</div>
+    <div class="nav-links">
+      <a onclick="showModal('about')">About</a>
+      <a onclick="showModal('privacy')">Privacy</a>
+      <a onclick="showModal('contact')">Contact</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-banner">
+      <h1>తెలుగు ద్వారా సులభంగా ఇంగ్లీష్ మాట్లాడండి</h1>
+      <p>వాక్యాలు వినండి, ప్రాక్టీస్ చేయండి, క్విజ్ ఆడండి</p>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('sentences')">📖 డైలీ వాక్యాలు (Daily Sentences)</button>
+      <button class="tab-btn" onclick="switchTab('quiz')">🎯 ప్రాక్టీస్ క్విజ్ (Quiz Mode)</button>
+    </div>
+
+    <!-- వాక్యాల విభాగం -->
+    <div id="sentencesTab" class="card">
+      <h3 style="margin-bottom: 15px; color: #38bdf8;">సాధారణంగా ఉపయోగించే వాక్యాలు:</h3>
+      <div id="sentencesList"></div>
+    </div>
+
+    <!-- క్విజ్ విభాగం -->
+    <div id="quizTab" class="card" style="display: none;">
+      <h3 style="margin-bottom: 15px; color: #38bdf8;">సరైన ఇంగ్లీష్ వాక్యాన్ని ఎంచుకోండి:</h3>
+      <div class="quiz-question" id="quizQuestion">ప్రశ్న లోడ్ అవుతోంది...</div>
+      <div class="options-grid" id="quizOptions"></div>
+      <div class="score-badge" id="scoreDisplay">స్కోర్: 0</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a onclick="showModal('about')">About Us</a>
+      <a onclick="showModal('privacy')">Privacy Policy</a>
+      <a onclick="showModal('terms')">Terms of Service</a>
+      <a onclick="showModal('contact')">Contact Us</a>
+    </div>
+    <p>&copy; 2026 SpeakFast English. All rights reserved.</p>
+  </footer>
+
+  <div id="infoModal" class="modal">
+    <div class="modal-box">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle" style="color: #38bdf8; margin-bottom: 10px;">వివరాలు</h3>
+      <div id="modalBody" style="color: #cbd5e1; font-size: 14px; line-height: 1.6;"></div>
+    </div>
+  </div>
+
+  <script>
+    const sentences = [
+      { telugu: "నువ్వు ఎక్కడికి వెళ్తున్నావు?", english: "Where are you going?" },
+      { telugu: "నాకు కొంచెం సహాయం కావాలి.", english: "I need some help." },
+      { telugu: "ఈరోజు వాతావరణం చాలా బాగుంది.", english: "The weather is very pleasant today." },
+      { telugu: "నువ్వు భోజనం చేశావా?", english: "Did you have your meal?" },
+      { telugu: "నేను త్వరలోనే తిరిగి వస్తాను.", english: "I will be back soon." },
+      { telugu: "దీని ధర ఎంత?", english: "How much does this cost?" },
+      { telugu: "నాకు అర్థం కాలేదు, మళ్లీ చెప్పండి.", english: "I didn't understand, please repeat." },
+      { telugu: "దయచేసి కొంచెం సమయం ఇవ్వండి.", english: "Please give me some time." }
+    ];
+
+    function renderSentences() {
+      const list = document.getElementById('sentencesList');
+      list.innerHTML = '';
+      sentences.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'sentence-item';
+        row.innerHTML = `
+          <div class="sentence-texts">
+            <div class="telugu">${item.telugu}</div>
+            <div class="english">${item.english}</div>
+          </div>
+          <button class="speak-btn" onclick="speakText('${item.english}')" title="వినండి">🔊</button>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.85;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("మీ బ్రౌజర్ ఆడియో స్పీచ్ ఫీచర్‌కు సపోర్ట్ చేయడం లేదు.");
+      }
+    }
+
+    let score = 0;
+    let currentQuizIndex = 0;
+
+    function loadQuiz() {
+      const current = sentences[currentQuizIndex];
+      document.getElementById('quizQuestion').innerHTML = `తెలుగు: <span>"${current.telugu}"</span>`;
+      
+      let options = [current.english];
+      while (options.length < 3) {
+        const randomItem = sentences[Math.floor(Math.random() * sentences.length)].english;
+        if (!options.includes(randomItem)) options.push(randomItem);
+      }
+      options.sort(() => Math.random() - 0.5);
+
+      const optGrid = document.getElementById('quizOptions');
+      optGrid.innerHTML = '';
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(btn, opt, current.english);
+        optGrid.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(btn, selected, correct) {
+      if (selected === correct) {
+        btn.style.backgroundColor = '#059669';
+        btn.style.borderColor = '#10b981';
+        score += 10;
+        speakText("Correct! " + correct);
+      } else {
+        btn.style.backgroundColor = '#dc2626';
+        btn.style.borderColor = '#ef4444';
+        speakText("Try again");
+      }
+      document.getElementById('scoreDisplay').innerText = `స్కోర్: ${score}`;
+      setTimeout(() => {
+        currentQuizIndex = (currentQuizIndex + 1) % sentences.length;
+        loadQuiz();
+      }, 1200);
+    }
+
+    function switchTab(tab) {
+      const sTab = document.getElementById('sentencesTab');
+      const qTab = document.getElementById('quizTab');
+      const btns = document.querySelectorAll('.tab-btn');
+
+      if (tab === 'sentences') {
+        sTab.style.display = 'block';
+        qTab.style.display = 'none';
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      } else {
+        sTab.style.display = 'none';
+        qTab.style.display = 'block';
+        btns[1].classList.add('active');
+        btns[0].classList.remove('active');
+        loadQuiz();
+      }
+    }
+
+    function showModal(type) {
+      const modal = document.getElementById('infoModal');
+      const title = document.getElementById('modalTitle');
+      const body = document.getElementById('modalBody');
+
+      if (type === 'about') {
+        title.innerText = "About SpeakFast English";
+        body.innerText = "SpeakFast English అనేది తెలుగు మాట్లాడే వారి కోసం రూపొందించిన ఉచిత ఇంగ్లీష్ లెర్నింగ్ వెబ్ యాప్. రోజువారీ ఉపయోగించే వాక్యాలు, సరైన ఉచ్చారణ మరియు క్విజ్ ప్రాక్టీస్ ద్వారా ఇంగ్లీష్ వేగంగా నేర్చుకోవచ్చు.";
+      } else if (type === 'privacy') {
+        title.innerText = "Privacy Policy";
+        body.innerText = "ఈ యాప్‌లో యూజర్ డేటా సేకరణ ఏమీ ఉండదు. మీ బ్రౌజర్ ఆఫ్‌లైన్ స్పీచ్ ఇంజిన్ సహాయంతో నేరుగా నడుస్తుంది.";
+      } else if (type === 'terms') {
+        title.innerText = "Terms of Service";
+        body.innerText = "ఈ వెబ్‌సైట్ విద్యార్థులు మరియు ఉద్యోగార్థుల ఉచిత అభ్యాసం కోసం అందించబడుతోంది.";
+      } else if (type === 'contact') {
+        title.innerText = "Contact Us";
+        body.innerText = "సలహాలు లేదా సందేహాల కోసం సంప్రదించండి: support@speakfast.english";
+      }
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('infoModal').style.display = 'none';
+    }
+
+    renderSentences();
+  </script>
+</body>
+</html>
