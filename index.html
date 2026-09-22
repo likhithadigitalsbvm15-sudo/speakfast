@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpeakFast English - తెలుగు ద్వారా సులభంగా ఇంగ్లీష్ నేర్చుకోండి</title>
-  <meta name="description" content="తెలుగు ద్వారా ఇంగ్లీష్ మాట్లాడటం సులభంగా నేర్చుకోండి. రోజువారీ వాక్యాలు, సరైన ఉచ్చారణ ఆడియో, మరియు ప్రాక్టీస్ క్విజ్.">
-  <meta name="keywords" content="learn english through telugu, spoken english telugu, english daily sentences telugu, telugu to english learning app">
+  <title>SpeakFast English - తెలుగు ద్వారా ఇంగ్లీష్ గ్రామర్ & 100+ వాక్యాలు</title>
+  <meta name="description" content="తెలుగు ద్వారా ఇంగ్లీష్ మాట్లాడటం సులభంగా నేర్చుకోండి. 100+ రోజువారీ వాక్యాలు, గ్రామర్ సూత్రాలు, సరైన ఉచ్చారణ ఆడియో, మరియు ప్రాక్టీస్ క్విజ్.">
+  <meta name="keywords" content="learn english through telugu, spoken english sentences telugu, daily english sentences telugu, english grammar telugu">
 
   <style>
     * {
@@ -15,177 +15,289 @@
       font-family: 'Segoe UI', Roboto, sans-serif;
     }
     body {
-      background-color: #0f172a;
+      background-color: #0b132b;
       color: #f8fafc;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      line-height: 1.6;
     }
     header {
-      background: #1e293b;
+      background: #1c2541;
       padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #334155;
+      border-bottom: 2px solid #3a506b;
     }
     .logo {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
-      color: #38bdf8;
+      color: #48cae4;
+      text-decoration: none;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .nav-links a {
-      color: #94a3b8;
+      color: #cbd5e1;
       margin-left: 15px;
       text-decoration: none;
       font-size: 14px;
       cursor: pointer;
     }
     .nav-links a:hover {
-      color: #38bdf8;
+      color: #48cae4;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       width: 92%;
-      margin: 24px auto;
+      margin: 20px auto;
       flex: 1;
     }
     .hero-banner {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
     .hero-banner h1 {
-      font-size: 28px;
-      color: #38bdf8;
-      margin-bottom: 8px;
+      font-size: 26px;
+      color: #48cae4;
+      margin-bottom: 6px;
     }
     .hero-banner p {
       color: #cbd5e1;
-      font-size: 15px;
+      font-size: 14px;
     }
     .tab-bar {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      background: #1e293b;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 18px;
+      background: #1c2541;
       padding: 6px;
-      border-radius: 10px;
+      border-radius: 12px;
     }
     .tab-btn {
-      flex: 1;
-      padding: 12px;
+      padding: 12px 6px;
       background: transparent;
       border: none;
       color: #94a3b8;
       font-weight: bold;
-      font-size: 15px;
+      font-size: 14px;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
+      text-align: center;
     }
     .tab-btn.active {
-      background: #0284c7;
+      background: #0077b6;
       color: #ffffff;
     }
+    @media (max-width: 600px) {
+      .tab-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
     .card {
-      background: #1e293b;
+      background: #1c2541;
       border-radius: 12px;
       padding: 20px;
-      border: 1px solid #334155;
+      border: 1px solid #3a506b;
       margin-bottom: 20px;
     }
+    .search-box {
+      width: 100%;
+      padding: 12px 16px;
+      background: #0b132b;
+      border: 1px solid #3a506b;
+      border-radius: 8px;
+      color: white;
+      font-size: 15px;
+      outline: none;
+      margin-bottom: 15px;
+    }
+    .search-box:focus {
+      border-color: #48cae4;
+    }
+    .category-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+    .cat-btn {
+      background: #0b132b;
+      border: 1px solid #3a506b;
+      color: #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .cat-btn.active {
+      background: #48cae4;
+      color: #0b132b;
+      font-weight: bold;
+    }
     .sentence-item {
-      background: #0f172a;
-      border: 1px solid #334155;
-      padding: 15px;
+      background: #0b132b;
+      border: 1px solid #3a506b;
+      padding: 14px 16px;
       border-radius: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .sentence-texts .telugu {
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 4px;
+    }
+    .sentence-texts .english {
+      font-size: 16px;
+      color: #48cae4;
+      font-weight: 600;
+    }
+    .sentence-tag {
+      display: inline-block;
+      font-size: 11px;
+      background: #1c2541;
+      color: #f59e0b;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+    .speak-btn {
+      background: #0077b6;
+      border: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .speak-btn:hover {
+      background: #023e8a;
+    }
+    .grammar-topic {
+      background: #0b132b;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 16px;
+      border-left: 4px solid #48cae4;
+    }
+    .grammar-topic h3 {
+      color: #48cae4;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .grammar-topic p {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .formula-box {
+      background: #1c2541;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-family: monospace;
+      color: #f59e0b;
+      font-size: 14px;
+      margin-bottom: 10px;
+      border: 1px dashed #3a506b;
+    }
+    .example-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .example-list li {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #e2e8f0;
+    }
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .vocab-card {
+      background: #0b132b;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #3a506b;
+    }
+    .vocab-word {
+      color: #48cae4;
+      font-size: 18px;
+      font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .sentence-texts .telugu {
-      font-size: 14px;
-      color: #94a3b8;
-      margin-bottom: 4px;
-    }
-    .sentence-texts .english {
-      font-size: 17px;
-      color: #38bdf8;
-      font-weight: 600;
-    }
-    .speak-btn {
-      background: #0284c7;
-      border: none;
-      color: white;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.2s;
-    }
-    .speak-btn:hover {
-      background: #0369a1;
-      transform: scale(1.05);
-    }
-    .quiz-question {
-      font-size: 18px;
-      margin-bottom: 15px;
-      color: #f8fafc;
-    }
-    .quiz-question span {
+    .vocab-meaning {
       color: #f59e0b;
-      font-weight: bold;
+      font-size: 14px;
+      margin-top: 4px;
+      margin-bottom: 6px;
     }
-    .options-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
+    .vocab-example {
+      color: #94a3b8;
+      font-size: 13px;
+      border-top: 1px solid #1c2541;
+      padding-top: 6px;
     }
     .opt-btn {
-      background: #0f172a;
-      border: 1px solid #475569;
+      width: 100%;
+      background: #0b132b;
+      border: 1px solid #3a506b;
       color: #f8fafc;
       padding: 14px;
       border-radius: 8px;
       text-align: left;
       font-size: 15px;
       cursor: pointer;
-      transition: 0.2s;
+      margin-bottom: 10px;
     }
     .opt-btn:hover {
-      border-color: #38bdf8;
+      border-color: #48cae4;
     }
-    .score-badge {
-      text-align: center;
-      font-size: 16px;
-      color: #10b981;
+    .load-more-btn {
+      width: 100%;
+      background: #0077b6;
+      border: none;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
       font-weight: bold;
-      margin-top: 15px;
+      cursor: pointer;
+      margin-top: 10px;
     }
     footer {
-      background: #1e293b;
+      background: #1c2541;
       padding: 20px;
       text-align: center;
-      border-top: 1px solid #334155;
+      border-top: 1px solid #3a506b;
       margin-top: auto;
     }
     .footer-links a {
-      color: #94a3b8;
+      color: #cbd5e1;
       text-decoration: none;
       margin: 0 10px;
       font-size: 13px;
       cursor: pointer;
     }
     .footer-links a:hover {
-      color: #38bdf8;
+      color: #48cae4;
     }
     footer p {
       color: #64748b;
@@ -203,12 +315,12 @@
       padding: 20px;
     }
     .modal-box {
-      background: #1e293b;
+      background: #1c2541;
       padding: 25px;
       border-radius: 12px;
       max-width: 500px;
       width: 100%;
-      border: 1px solid #475569;
+      border: 1px solid #3a506b;
       position: relative;
     }
     .close-modal {
@@ -217,14 +329,14 @@
       right: 15px;
       cursor: pointer;
       font-size: 20px;
-      color: #94a3b8;
+      color: #cbd5e1;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">🗣️ SpeakFast English</div>
+    <a href="#" class="logo">🗣️ SpeakFast English</a>
     <div class="nav-links">
       <a onclick="showModal('about')">About</a>
       <a onclick="showModal('privacy')">Privacy</a>
@@ -234,27 +346,114 @@
 
   <div class="container">
     <div class="hero-banner">
-      <h1>తెలుగు ద్వారా సులభంగా ఇంగ్లీష్ మాట్లాడండి</h1>
-      <p>వాక్యాలు వినండి, ప్రాక్టీస్ చేయండి, క్విజ్ ఆడండి</p>
+      <h1>తెలుగు ద్వారా ఇంగ్లీష్ మాట్లాడటం & గ్రామర్ నేర్చుకోండి</h1>
+      <p>100+ వాక్యాలు • గ్రామర్ సూత్రాలు • వొకాబులరీ • ప్రాక్టీస్ క్విజ్</p>
     </div>
 
     <div class="tab-bar">
-      <button class="tab-btn active" onclick="switchTab('sentences')">📖 డైలీ వాక్యాలు (Daily Sentences)</button>
-      <button class="tab-btn" onclick="switchTab('quiz')">🎯 ప్రాక్టీస్ క్విజ్ (Quiz Mode)</button>
+      <button class="tab-btn active" onclick="switchMainTab('sentences', this)">📖 వాక్యాలు</button>
+      <button class="tab-btn" onclick="switchMainTab('grammar', this)">📚 గ్రామర్ రూల్స్</button>
+      <button class="tab-btn" onclick="switchMainTab('vocab', this)">🔤 వొకాబులరీ</button>
+      <button class="tab-btn" onclick="switchMainTab('quiz', this)">🎯 క్విజ్ మోడ్</button>
     </div>
 
-    <!-- వాక్యాల విభాగం -->
-    <div id="sentencesTab" class="card">
-      <h3 style="margin-bottom: 15px; color: #38bdf8;">సాధారణంగా ఉపయోగించే వాక్యాలు:</h3>
-      <div id="sentencesList"></div>
+    <!-- 1. వాక్యాల విభాగం -->
+    <div id="sentencesTab">
+      <input type="text" id="searchInput" class="search-box" placeholder="🔍 ఏదైనా తెలుగు లేదా ఇంగ్లీష్ పదం సెర్చ్ చేయండి..." oninput="filterSentences()">
+      <div class="category-pills">
+        <button class="cat-btn active" onclick="selectCat('all', this)">అన్నీ (All)</button>
+        <button class="cat-btn" onclick="selectCat('daily', this)">డైలీ రొటీన్</button>
+        <button class="cat-btn" onclick="selectCat('office', this)">ఆఫీస్ & జాబ్</button>
+        <button class="cat-btn" onclick="selectCat('market', this)">షాపింగ్</button>
+        <button class="cat-btn" onclick="selectCat('travel', this)">ట్రావెల్</button>
+        <button class="cat-btn" onclick="selectCat('bank', this)">బ్యాంక్ & మనీ</button>
+        <button class="cat-btn" onclick="selectCat('health', this)">ఆరోగ్యం</button>
+        <button class="cat-btn" onclick="selectCat('food', this)">హోటల్ & ఫుడ్</button>
+        <button class="cat-btn" onclick="selectCat('chat', this)">సంభాషణలు</button>
+        <button class="cat-btn" onclick="selectCat('emotions', this)">ఎమోషన్స్</button>
+      </div>
+
+      <div class="card">
+        <div id="countStatus" style="font-size: 13px; color: #94a3b8; margin-bottom: 12px;"></div>
+        <div id="sentencesList"></div>
+        <button id="loadMoreBtn" class="load-more-btn" onclick="loadMore()">మరిన్ని వాక్యాలు చూడండి ⬇️</button>
+      </div>
     </div>
 
-    <!-- క్విజ్ విభాగం -->
-    <div id="quizTab" class="card" style="display: none;">
-      <h3 style="margin-bottom: 15px; color: #38bdf8;">సరైన ఇంగ్లీష్ వాక్యాన్ని ఎంచుకోండి:</h3>
-      <div class="quiz-question" id="quizQuestion">ప్రశ్న లోడ్ అవుతోంది...</div>
-      <div class="options-grid" id="quizOptions"></div>
-      <div class="score-badge" id="scoreDisplay">స్కోర్: 0</div>
+    <!-- 2. గ్రామర్ విభాగం -->
+    <div id="grammarTab" style="display: none;">
+      <div class="card">
+        <h2 style="color: #48cae4; font-size: 20px; margin-bottom: 15px;">ముఖ్యమైన ఇంగ్లీష్ గ్రామర్ సూత్రాలు (సరళమైన తెలుగులో)</h2>
+
+        <div class="grammar-topic">
+          <h3>1. Simple Present Tense (నిత్యం జరిగే పనులు & అలవాట్లు)</h3>
+          <p>మనం ప్రతిరోజూ చేసే పనులు, అలవాట్లు, లేదా నిజాల గురించి చెప్పేటప్పుడు వాడతాము.</p>
+          <div class="formula-box">సూత్రం: Subject + Verb(V1) [He/She/It వచ్చినప్పుడు Verb కి 's' లేదా 'es' వస్తుంది]</div>
+          <ul class="example-list">
+            <li>• నేను ప్రతిరోజూ టీ తాగుతాను. ➔ <strong>I drink tea every day.</strong></li>
+            <li>• అతను చాలా బాగా ఆడతాడు. ➔ <strong>He plays very well.</strong></li>
+            <li>• వారు హైదరాబాద్‌లో నివసిస్తున్నారు. ➔ <strong>They live in Hyderabad.</strong></li>
+          </ul>
+        </div>
+
+        <div class="grammar-topic">
+          <h3>2. Present Continuous Tense (ప్రస్తుతం జరుగుతున్న పనులు)</h3>
+          <p>మనం మాట్లాడుతున్న సమయంలో ప్రస్తుతం నడుస్తున్న పనిని తెలియజేస్తుంది.</p>
+          <div class="formula-box">సూత్రం: Subject + is / am / are + Verb(ing)</div>
+          <ul class="example-list">
+            <li>• నేను పుస్తకం చదువుతున్నాను. ➔ <strong>I am reading a book.</strong></li>
+            <li>• ఆమె వంట చేస్తోంది. ➔ <strong>She is cooking food.</strong></li>
+            <li>• పిల్లలు ఆడుకుంటున్నారు. ➔ <strong>Children are playing.</strong></li>
+          </ul>
+        </div>
+
+        <div class="grammar-topic">
+          <h3>3. Simple Past Tense (గతంలో పూర్తయిన పనులు)</h3>
+          <p>గతంలో జరిగిపోయిన పనులను చెప్పడానికి వాడతాము (Verb 2nd form వాడాలి).</p>
+          <div class="formula-box">సూత్రం: Subject + Verb(V2) + Object</div>
+          <ul class="example-list">
+            <li>• నేను నిన్న సినిమా చూశాను. ➔ <strong>I watched a movie yesterday.</strong></li>
+            <li>• అతను పరీక్ష పాసయ్యాడు. ➔ <strong>He passed the exam.</strong></li>
+            <li>• మేము గత వారం ఊరికి వెళ్లాము. ➔ <strong>We went to our village last week.</strong></li>
+          </ul>
+        </div>
+
+        <div class="grammar-topic">
+          <h3>4. Simple Future Tense (భవిష్యత్తులో జరగబోయే పనులు)</h3>
+          <p>రేపు లేదా రాబోయే రోజుల్లో చేయబోయే పనులను తెలియజేయడానికి వాడతాము.</p>
+          <div class="formula-box">సూత్రం: Subject + will + Verb(V1)</div>
+          <ul class="example-list">
+            <li>• నేను రేపు ఉదయం వస్తాను. ➔ <strong>I will come tomorrow morning.</strong></li>
+            <li>• మేము వచ్చే నెల కారు కొంటాము. ➔ <strong>We will buy a car next month.</strong></li>
+            <li>• ఆమె కచ్చితంగా పాస్ అవుతుంది. ➔ <strong>She will definitely pass.</strong></li>
+          </ul>
+        </div>
+
+        <div class="grammar-topic">
+          <h3>5. Can, Could, Should ల వాడకం</h3>
+          <p><strong>Can:</strong> చేయగలను (సామర్థ్యం). ఉదా: <em>I can speak English.</em></p>
+          <p><strong>Could:</strong> చేయగలరా? (మర్యాదగా కోరడం). ఉదా: <em>Could you give me your pen?</em></p>
+          <p><strong>Should:</strong> చేయాలి (బాధ్యత/సలహా). ఉదా: <em>You should sleep early.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. వొకాబులరీ విభాగం -->
+    <div id="vocabTab" style="display: none;">
+      <div class="card">
+        <h2 style="color: #48cae4; font-size: 20px; margin-bottom: 15px;">ముఖ్యమైన ఇంగ్లీష్ పదాలు (Daily Vocabulary)</h2>
+        <div class="vocab-grid" id="vocabGrid"></div>
+      </div>
+    </div>
+
+    <!-- 4. క్విజ్ విభాగం -->
+    <div id="quizTab" style="display: none;">
+      <div class="card">
+        <h3 style="color: #48cae4; margin-bottom: 15px;">సరైన ఇంగ్లీష్ వాక్యాన్ని ఎంచుకోండి:</h3>
+        <div id="quizQuestion" style="font-size: 18px; margin-bottom: 15px; color: #f8fafc;">ప్రశ్న లోడ్ అవుతోంది...</div>
+        <div id="quizOptions"></div>
+        <div id="scoreDisplay" style="text-align: center; color: #10b981; font-weight: bold; margin-top: 15px; font-size: 16px;">స్కోర్: 0</div>
+      </div>
     </div>
   </div>
 
@@ -271,112 +470,278 @@
   <div id="infoModal" class="modal">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">&times;</span>
-      <h3 id="modalTitle" style="color: #38bdf8; margin-bottom: 10px;">వివరాలు</h3>
+      <h3 id="modalTitle" style="color: #48cae4; margin-bottom: 10px;">వివరాలు</h3>
       <div id="modalBody" style="color: #cbd5e1; font-size: 14px; line-height: 1.6;"></div>
     </div>
   </div>
 
   <script>
+    // మొత్తం 100+ వాక్యాల భారీ లిస్ట్
     const sentences = [
-      { telugu: "నువ్వు ఎక్కడికి వెళ్తున్నావు?", english: "Where are you going?" },
-      { telugu: "నాకు కొంచెం సహాయం కావాలి.", english: "I need some help." },
-      { telugu: "ఈరోజు వాతావరణం చాలా బాగుంది.", english: "The weather is very pleasant today." },
-      { telugu: "నువ్వు భోజనం చేశావా?", english: "Did you have your meal?" },
-      { telugu: "నేను త్వరలోనే తిరిగి వస్తాను.", english: "I will be back soon." },
-      { telugu: "దీని ధర ఎంత?", english: "How much does this cost?" },
-      { telugu: "నాకు అర్థం కాలేదు, మళ్లీ చెప్పండి.", english: "I didn't understand, please repeat." },
-      { telugu: "దయచేసి కొంచెం సమయం ఇవ్వండి.", english: "Please give me some time." }
+      // 1. డైలీ రొటీన్ & ఇల్లు (20 వాక్యాలు)
+      { telugu: "నువ్వు ఎప్పుడు నిద్రలేస్తావు?", english: "When do you wake up?", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నేను ఉదయం 6 గంటలకు నిద్రలేస్తాను.", english: "I wake up at 6 AM.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నాకు కొంచెం సహాయం కావాలి.", english: "I need some help.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నువ్వు టిఫిన్ చేశావా?", english: "Did you have breakfast?", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నువ్వు భోజనం చేశావా?", english: "Did you have lunch?", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "లైట్లు మరియు ఫ్యాన్లు ఆపివేయండి.", english: "Turn off the lights and fans.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నాకు చాలా దాహంగా ఉంది, నీళ్లు ఇవ్వండి.", english: "I am thirsty, please give me water.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "దయచేసి కొంచెం సమయం ఇవ్వండి.", english: "Please give me some time.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "తలుపు మూసి ఉంచు.", english: "Keep the door closed.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "కిటికీలు తెరిచి ఉంచు.", english: "Keep the windows open.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "టీ తాగడం నీకు అలవాటా?", english: "Are you used to drinking tea?", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నా బట్టలు ఎక్కడ ఉన్నాయి?", english: "Where are my clothes?", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "గదిని శుభ్రంగా ఉంచుకోండి.", english: "Keep the room clean.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "త్వరగా రడీ అవ్వు, లేట్ అవుతోంది.", english: "Get ready quickly, it is getting late.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "రాత్రి భోజనం సిద్ధంగా ఉందా?", english: "Is dinner ready?", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నా ఫోన్ ఛార్జింగ్ అయిపోయింది.", english: "My phone battery has run out.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "చెత్తను డస్ట్‌బిన్‌లో వేయండి.", english: "Throw the garbage in the dustbin.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "టీవీ సౌండ్ కొంచెం తగ్గించు.", english: "Lower the TV volume a bit.", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నా చెప్పులు ఎక్కడ పెట్టావు?", english: "Where did you put my slippers?", cat: "daily", label: "డైలీ రొటీన్" },
+      { telugu: "నేను మార్కెట్ వెళ్లి వస్తాను.", english: "I will go to the market and come back.", cat: "daily", label: "డైలీ రొటీన్" },
+
+      // 2. ఆఫీస్ & ఉద్యోగం (16 వాక్యాలు)
+      { telugu: "మీటింగ్‌కి సమయానికి రండి.", english: "Please come to the meeting on time.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "ఈ ఫైల్ నాకు ఇమెయిల్ చేయగలరా?", english: "Could you email me this file?", cat: "office", label: "ఆఫీస్" },
+      { telugu: "నేను ఈరోజు సెలవు తీసుకుంటున్నాను.", english: "I am taking leave today.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "ప్రాజెక్ట్ డెడ్‌లైన్ ఎప్పుడు?", english: "When is the project deadline?", cat: "office", label: "ఆఫీస్" },
+      { telugu: "నాకు ఈ పని పూర్తి చేయడానికి సమయం కావాలి.", english: "I need more time to finish this task.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "బాస్ మిమ్మల్ని పిలుస్తున్నారు.", english: "The boss is calling you.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "మనం రేపు చర్చించుకుందాం.", english: "Let us discuss this tomorrow.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "నేను ప్రస్తుతం చాలా బిజీగా ఉన్నాను.", english: "I am currently very busy.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "ఈ డాక్యుమెంట్ ప్రింట్ తీసి ఇవ్వండి.", english: "Please take a printout of this document.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "రిపోర్ట్ సిద్ధం చేయడం పూర్తయిందా?", english: "Is the report preparation completed?", cat: "office", label: "ఆఫీస్" },
+      { telugu: "నా కంప్యూటర్ సరిగ్గా పనిచేయడం లేదు.", english: "My computer is not working properly.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "ఈ ప్రెజెంటేషన్ చాలా బాగుంది.", english: "This presentation is very impressive.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "ఈ ప్రాజెక్ట్‌కి టీమ్‌వర్క్ చాలా అవసరం.", english: "Teamwork is essential for this project.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "మీకు ఎంత అనుభవం ఉంది?", english: "How much experience do you have?", cat: "office", label: "ఆఫీస్" },
+      { telugu: "నేను నా రెజ్యూమ్ పంపించాను.", english: "I have sent my resume.", cat: "office", label: "ఆఫీస్" },
+      { telugu: "శాలరీ ఎప్పుడు క్రెడిట్ అవుతుంది?", english: "When will the salary be credited?", cat: "office", label: "ఆఫీస్" },
+
+      // 3. షాపింగ్ & మార్కెట్ (13 వాక్యాలు)
+      { telugu: "దీని ఖరీదు ఎంత?", english: "How much does this cost?", cat: "market", label: "షాపింగ్" },
+      { telugu: "కొంచెం ధర తగ్గించగలరా?", english: "Can you give a little discount?", cat: "market", label: "షాపింగ్" },
+      { telugu: "ఆన్‌లైన్ పేమెంట్ లేదా UPI తీసుకుంటారా?", english: "Do you accept online payment or UPI?", cat: "market", label: "షాపింగ్" },
+      { telugu: "ఈ షర్ట్ వేరే సైజులో ఉందా?", english: "Is this shirt available in another size?", cat: "market", label: "షాపింగ్" },
+      { telugu: "నాకు బిల్లు ఇవ్వండి.", english: "Please give me the bill.", cat: "market", label: "షాపింగ్" },
+      { telugu: "ఇది చాలా ఖరీదైనదిగా ఉంది.", english: "This looks very expensive.", cat: "market", label: "షాపింగ్" },
+      { telugu: "ఈ వస్తువుకు వారంటీ ఉందా?", english: "Does this product have a warranty?", cat: "market", label: "షాపింగ్" },
+      { telugu: "వేరే రంగులు ఏమైనా ఉన్నాయా?", english: "Are there any other colors available?", cat: "market", label: "షాపింగ్" },
+      { telugu: "ఇది నాణ్యమైనదేనా?", english: "Is this of good quality?", cat: "market", label: "షాపింగ్" },
+      { telugu: "నాకు ఇంకా ఒక క్యారీ బ్యాగ్ కావాలి.", english: "I need one more carry bag.", cat: "market", label: "షాపింగ్" },
+      { telugu: "నేను దీన్ని మార్చుకోవచ్చా?", english: "Can I exchange this item?", cat: "market", label: "షాపింగ్" },
+      { telugu: "ట్రయల్ రూమ్ ఎక్కడ ఉంది?", english: "Where is the trial room?", cat: "market", label: "షాపింగ్" },
+      { telugu: "ఈ ఆఫర్ ఈరోజు వరకేనా?", english: "Is this offer valid only for today?", cat: "market", label: "షాపింగ్" },
+
+      // 4. ప్రయాణాలు & ట్రావెల్ (12 వాక్యాలు)
+      { telugu: "బస్ ఎప్పుడు వస్తుంది?", english: "When will the bus arrive?", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "రైల్వే స్టేషన్‌కి ఎలా వెళ్ళాలి?", english: "How do I get to the railway station?", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "ఆటో ఛార్జీ ఎంత అవుతుంది?", english: "How much is the auto fare?", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "ఇక్కడి నుండి బస్ స్టాప్ ఎంత దూరం?", english: "How far is the bus stop from here?", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "దయచేసి నన్ను అక్కడ డ్రాప్ చేయండి.", english: "Please drop me there.", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "ఈ ట్రైన్ ఎక్కడ ఆగుతుంది?", english: "Where does this train stop?", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "టికెట్ కౌంటర్ ఎక్కడ ఉంది?", english: "Where is the ticket counter?", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "ప్లాట్‌ఫారమ్ నంబర్ 2 ఎటువైపు?", english: "Which way is platform number 2?", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "ట్రాఫిక్ చాలా ఎక్కువగా ఉంది.", english: "The traffic is very heavy.", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "మేము సరైన దారిలోనే వెళ్తున్నామా?", english: "Are we heading in the right direction?", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "నా లగేజ్ కాస్త చూసుకోండి.", english: "Please keep an eye on my luggage.", cat: "travel", label: "ట్రావెల్" },
+      { telugu: "విమానం సమయానికి బయలుదేరుతుందా?", english: "Will the flight depart on time?", cat: "travel", label: "ట్రావెల్" },
+
+      // 5. బ్యాంక్ & మనీ (8 వాక్యాలు)
+      { telugu: "నా అకౌంట్‌లో బ్యాలెన్స్ ఎంత ఉంది?", english: "What is the balance in my account?", cat: "bank", label: "బ్యాంక్" },
+      { telugu: "నాకు కొత్త ATM కార్డు కావాలి.", english: "I need a new ATM card.", cat: "bank", label: "బ్యాంక్" },
+      { telugu: "డబ్బులు డ్రా చేయడానికి ఫారం ఎక్కడ దొరుకుతుంది?", english: "Where can I get the withdrawal form?", cat: "bank", label: "బ్యాంక్" },
+      { telugu: "ఈ చెక్కును క్లియర్ చేయడానికి ఎంత సమయం పడుతుంది?", english: "How long will it take to clear this cheque?", cat: "bank", label: "బ్యాంక్" },
+      { telugu: "నా అమౌంట్ కట్ అయింది కానీ డబ్బులు రాలేదు.", english: "The amount was debited, but I did not receive money.", cat: "bank", label: "బ్యాంక్" },
+      { telugu: "నా పాస్‌బుక్ ప్రింట్ తీసివ్వండి.", english: "Please update my passbook.", cat: "bank", label: "బ్యాంక్" },
+      { telugu: "నాకు పర్సనల్ లోన్ కావాలి.", english: "I need a personal loan.", cat: "bank", label: "బ్యాంక్" },
+      { telugu: "ఈ బ్యాంక్ మేనేజర్ ఎవరు?", english: "Who is the manager of this bank?", cat: "bank", label: "బ్యాంక్" },
+
+      // 6. ఆరోగ్యం & హాస్పిటల్ (8 వాక్యాలు)
+      { telugu: "నాకు రెండు రోజులుగా జ్వరం వస్తోంది.", english: "I have had a fever for two days.", cat: "health", label: "ఆరోగ్యం" },
+      { telugu: "డాక్టర్ అపాయింట్‌మెంట్ దొరుకుతుందా?", english: "Can I get a doctor appointment?", cat: "health", label: "ఆరోగ్యం" },
+      { telugu: "ఈ మందులు భోజనం తర్వాత వేసుకోవాలా?", english: "Should I take these medicines after food?", cat: "health", label: "ఆరోగ్యం" },
+      { telugu: "నాకు తలనొప్పిగా మరియు అలసటగా ఉంది.", english: "I have a headache and feel tired.", cat: "health", label: "ఆరోగ్యం" },
+      { telugu: "త్వరగా కోలుకోండి!", english: "Get well soon!", cat: "health", label: "ఆరోగ్యం" },
+      { telugu: "మందుల షాప్ ఎక్కడ ఉంది?", english: "Where is the pharmacy?", cat: "health", label: "ఆరోగ్యం" },
+      { telugu: "రక్త పరీక్ష ఫలితాలు ఎప్పుడు వస్తాయి?", english: "When will the blood test reports come?", cat: "health", label: "ఆరోగ్యం" },
+      { telugu: "నా కడుపులో నొప్పిగా ఉంది.", english: "I have a stomach ache.", cat: "health", label: "ఆరోగ్యం" },
+
+      // 7. హోటల్ & రెస్టారెంట్ (8 వాక్యాలు)
+      { telugu: "మెనూ కార్డు తీసుకురండి.", english: "Please bring the menu card.", cat: "food", label: "హోటల్ & ఫుడ్" },
+      { telugu: "ఈరోజు స్పెషల్ ఏమిటి?", english: "What is today's special?", cat: "food", label: "హోటల్ & ఫుడ్" },
+      { telugu: "ఆహారం చాలా రుచిగా ఉంది.", english: "The food is very delicious.", cat: "food", label: "హోటల్ & ఫుడ్" },
+      { telugu: "కారం కొంచెం తక్కువగా వేయండి.", english: "Please make it less spicy.", cat: "food", label: "హోటల్ & ఫుడ్" },
+      { telugu: "మా ఆర్డర్ ఎప్పుడు వస్తుంది?", english: "When will our order arrive?", cat: "food", label: "హోటల్ & ఫుడ్" },
+      { telugu: "నాకు ఒక గ్లాసు వేడి నీళ్లు కావాలి.", english: "I need a glass of hot water.", cat: "food", label: "హోటల్ & ఫుడ్" },
+      { telugu: "పార్సిల్ కట్టండి.", english: "Please pack this as parcel.", cat: "food", label: "హోటల్ & ఫుడ్" },
+      { telugu: "బిల్లు తీసుకురండి.", english: "Please bring the bill.", cat: "food", label: "హోటల్ & ఫుడ్" },
+
+      // 8. సంభాషణలు & చాటింగ్ (10 వాక్యాలు)
+      { telugu: "నాకు అర్థం కాలేదు, మళ్లీ చెప్పండి.", english: "I did not understand, please repeat.", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "మీ అభిప్రాయం ఏమిటి?", english: "What is your opinion?", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "నేను మీతో పూర్తిగా ఏకీభవిస్తున్నాను.", english: "I completely agree with you.", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "ఈ విషయం గురించి తర్వాత మాట్లాడదాం.", english: "Let us talk about this later.", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "నిన్ను కలవడం చాలా సంతోషంగా ఉంది.", english: "It was nice meeting you.", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "నువ్వు ఖాళీగా ఉన్నప్పుడు నాకు కాల్ చెయ్.", english: "Call me whenever you are free.", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "మీ వాయిస్ సరిగ్గా వినపడట్లేదు.", english: "Your voice is not clear.", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "దయచేసి ఒక నిమిషం లైన్‌లో ఉండండి.", english: "Please hold the line for a minute.", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "నేను తర్వాత కాల్ చేస్తాను.", english: "I will call you back later.", cat: "chat", label: "సంభాషణలు" },
+      { telugu: "నువ్వు ఎక్కడ ఉన్నావు ఇప్పుడు?", english: "Where are you right now?", cat: "chat", label: "సంభాషణలు" },
+
+      // 9. భావోద్వేగాలు (7 వాక్యాలు)
+      { telugu: "నేను ఈరోజు చాలా సంతోషంగా ఉన్నాను.", english: "I am very happy today.", cat: "emotions", label: "ఎమోషన్స్" },
+      { telugu: "నాకు కొంచెం భయంగా అనిపిస్తోంది.", english: "I am feeling a little scared.", cat: "emotions", label: "ఎమోషన్స్" },
+      { telugu: "ఎందుకు అంత కోపంగా ఉన్నావు?", english: "Why are you so angry?", cat: "emotions", label: "ఎమోషన్స్" },
+      { telugu: "ధైర్యం కోల్పోవద్దు, అంతా మంచే జరుగుతుంది.", english: "Do not lose hope, all will be well.", cat: "emotions", label: "ఎమోషన్స్" },
+      { telugu: "నాకు చాలా ఆశ్చర్యంగా అనిపించింది.", english: "I was very surprised.", cat: "emotions", label: "ఎమోషన్స్" },
+      { telugu: "అనవసరంగా బాధపడకు.", english: "Do not worry unnecessarily.", cat: "emotions", label: "ఎమోషన్స్" },
+      { telugu: "నాకు చాలా గర్వంగా ఉంది.", english: "I feel very proud.", cat: "emotions", label: "ఎమోషన్స్" }
     ];
+
+    const vocabularies = [
+      { word: "Opportunity", meaning: "అవకాశం", ex: "This is a great opportunity." },
+      { word: "Improve", meaning: "మెరుగుపరుచుకోవడం", ex: "You must improve your skills." },
+      { word: "Confused", meaning: "గందరగోళం", ex: "I am confused about this topic." },
+      { word: "Confidence", meaning: "ఆత్మవిశ్వాసం", ex: "Speak with high confidence." },
+      { word: "Responsibility", meaning: "బాధ్యత", ex: "It is your responsibility." },
+      { word: "Patience", meaning: "ఓపిక / సహనం", ex: "Patience is important in life." },
+      { word: "Immediately", meaning: "వెంటనే", ex: "Please do it immediately." },
+      { word: "Decision", meaning: "నిర్ణయం", ex: "Take the right decision." },
+      { word: "Curious", meaning: "ఆసక్తిగా ఉండటం", ex: "I am curious to learn new things." },
+      { word: "Courage", meaning: "ధైర్యం", ex: "Have courage to face problems." }
+    ];
+
+    let currentCategory = 'all';
+    let filtered = [...sentences];
+    let limit = 15;
 
     function renderSentences() {
       const list = document.getElementById('sentencesList');
+      const count = document.getElementById('countStatus');
+      const loadBtn = document.getElementById('loadMoreBtn');
       list.innerHTML = '';
-      sentences.forEach(item => {
-        const row = document.createElement('div');
-        row.className = 'sentence-item';
-        row.innerHTML = `
+      
+      count.innerText = `కనిపిస్తున్న వాక్యాలు: ${Math.min(limit, filtered.length)} / మొత్తం: ${filtered.length}`;
+      const toShow = filtered.slice(0, limit);
+
+      toShow.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'sentence-item';
+        div.innerHTML = `
           <div class="sentence-texts">
             <div class="telugu">${item.telugu}</div>
             <div class="english">${item.english}</div>
+            <span class="sentence-tag">${item.label}</span>
           </div>
           <button class="speak-btn" onclick="speakText('${item.english}')" title="వినండి">🔊</button>
         `;
-        list.appendChild(row);
+        list.appendChild(div);
+      });
+
+      loadBtn.style.display = (limit >= filtered.length) ? 'none' : 'block';
+    }
+
+    function filterSentences() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      filtered = sentences.filter(s => {
+        const catMatch = (currentCategory === 'all') || (s.cat === currentCategory);
+        const textMatch = s.telugu.toLowerCase().includes(q) || s.english.toLowerCase().includes(q);
+        return catMatch && textMatch;
+      });
+      limit = 15;
+      renderSentences();
+    }
+
+    function selectCat(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterSentences();
+    }
+
+    function loadMore() {
+      limit += 15;
+      renderSentences();
+    }
+
+    function renderVocab() {
+      const grid = document.getElementById('vocabGrid');
+      grid.innerHTML = '';
+      vocabularies.forEach(v => {
+        const div = document.createElement('div');
+        div.className = 'vocab-card';
+        div.innerHTML = `
+          <div class="vocab-word">
+            <span>${v.word}</span>
+            <button class="speak-btn" style="width:30px; height:30px; font-size:13px;" onclick="speakText('${v.word}')">🔊</button>
+          </div>
+          <div class="vocab-meaning">${v.meaning}</div>
+          <div class="vocab-example"><strong>ఉదా:</strong> ${v.ex}</div>
+        `;
+        grid.appendChild(div);
       });
     }
 
     function speakText(text) {
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US';
-        utterance.rate = 0.85;
-        window.speechSynthesis.speak(utterance);
-      } else {
-        alert("మీ బ్రౌజర్ ఆడియో స్పీచ్ ఫీచర్‌కు సపోర్ట్ చేయడం లేదు.");
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        u.rate = 0.85;
+        window.speechSynthesis.speak(u);
       }
     }
 
-    let score = 0;
-    let currentQuizIndex = 0;
+    let quizScore = 0;
+    let qIdx = 0;
 
     function loadQuiz() {
-      const current = sentences[currentQuizIndex];
-      document.getElementById('quizQuestion').innerHTML = `తెలుగు: <span>"${current.telugu}"</span>`;
-      
-      let options = [current.english];
-      while (options.length < 3) {
-        const randomItem = sentences[Math.floor(Math.random() * sentences.length)].english;
-        if (!options.includes(randomItem)) options.push(randomItem);
+      const item = sentences[qIdx];
+      document.getElementById('quizQuestion').innerHTML = `తెలుగు: <span style="color:#f59e0b;">"${item.telugu}"</span>`;
+      let opts = [item.english];
+      while (opts.length < 3) {
+        const r = sentences[Math.floor(Math.random() * sentences.length)].english;
+        if (!opts.includes(r)) opts.push(r);
       }
-      options.sort(() => Math.random() - 0.5);
+      opts.sort(() => Math.random() - 0.5);
 
-      const optGrid = document.getElementById('quizOptions');
-      optGrid.innerHTML = '';
-      options.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.className = 'opt-btn';
-        btn.innerText = opt;
-        btn.onclick = () => checkAnswer(btn, opt, current.english);
-        optGrid.appendChild(btn);
+      const box = document.getElementById('quizOptions');
+      box.innerHTML = '';
+      opts.forEach(opt => {
+        const b = document.createElement('button');
+        b.className = 'opt-btn';
+        b.innerText = opt;
+        b.onclick = () => {
+          if (opt === item.english) {
+            b.style.backgroundColor = '#059669';
+            quizScore += 10;
+            speakText("Correct!");
+          } else {
+            b.style.backgroundColor = '#dc2626';
+            speakText("Try again");
+          }
+          document.getElementById('scoreDisplay').innerText = `స్కోర్: ${quizScore}`;
+          setTimeout(() => {
+            qIdx = (qIdx + 1) % sentences.length;
+            loadQuiz();
+          }, 1000);
+        };
+        box.appendChild(b);
       });
     }
 
-    function checkAnswer(btn, selected, correct) {
-      if (selected === correct) {
-        btn.style.backgroundColor = '#059669';
-        btn.style.borderColor = '#10b981';
-        score += 10;
-        speakText("Correct! " + correct);
-      } else {
-        btn.style.backgroundColor = '#dc2626';
-        btn.style.borderColor = '#ef4444';
-        speakText("Try again");
-      }
-      document.getElementById('scoreDisplay').innerText = `స్కోర్: ${score}`;
-      setTimeout(() => {
-        currentQuizIndex = (currentQuizIndex + 1) % sentences.length;
-        loadQuiz();
-      }, 1200);
-    }
+    function switchMainTab(tab, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    function switchTab(tab) {
-      const sTab = document.getElementById('sentencesTab');
-      const qTab = document.getElementById('quizTab');
-      const btns = document.querySelectorAll('.tab-btn');
+      document.getElementById('sentencesTab').style.display = (tab === 'sentences') ? 'block' : 'none';
+      document.getElementById('grammarTab').style.display = (tab === 'grammar') ? 'block' : 'none';
+      document.getElementById('vocabTab').style.display = (tab === 'vocab') ? 'block' : 'none';
+      document.getElementById('quizTab').style.display = (tab === 'quiz') ? 'block' : 'none';
 
-      if (tab === 'sentences') {
-        sTab.style.display = 'block';
-        qTab.style.display = 'none';
-        btns[0].classList.add('active');
-        btns[1].classList.remove('active');
-      } else {
-        sTab.style.display = 'none';
-        qTab.style.display = 'block';
-        btns[1].classList.add('active');
-        btns[0].classList.remove('active');
-        loadQuiz();
-      }
+      if (tab === 'vocab') renderVocab();
+      if (tab === 'quiz') loadQuiz();
     }
 
     function showModal(type) {
@@ -386,16 +751,16 @@
 
       if (type === 'about') {
         title.innerText = "About SpeakFast English";
-        body.innerText = "SpeakFast English అనేది తెలుగు మాట్లాడే వారి కోసం రూపొందించిన ఉచిత ఇంగ్లీష్ లెర్నింగ్ వెబ్ యాప్. రోజువారీ ఉపయోగించే వాక్యాలు, సరైన ఉచ్చారణ మరియు క్విజ్ ప్రాక్టీస్ ద్వారా ఇంగ్లీష్ వేగంగా నేర్చుకోవచ్చు.";
+        body.innerText = "SpeakFast English అనేది తెలుగు మాట్లాడే వారి కోసం రూపొందించిన సమగ్ర ఇంగ్లీష్ లెర్నింగ్ పోర్టల్. గ్రామర్ సూత్రాలు, నిత్యజీవిత వాక్యాలు, వొకాబులరీ మరియు ఇంటరాక్టివ్ క్విజ్ ఇందులో ఉచితంగా లభిస్తాయి.";
       } else if (type === 'privacy') {
         title.innerText = "Privacy Policy";
-        body.innerText = "ఈ యాప్‌లో యూజర్ డేటా సేకరణ ఏమీ ఉండదు. మీ బ్రౌజర్ ఆఫ్‌లైన్ స్పీచ్ ఇంజిన్ సహాయంతో నేరుగా నడుస్తుంది.";
+        body.innerText = "ఈ వెబ్‌సైట్‌లో యూజర్ల ఎలాంటి వ్యక్తిగత సమాచారం సేకరించబడదు. పూర్తిగా క్లయింట్-సైడ్ పనిచేస్తుంది.";
       } else if (type === 'terms') {
         title.innerText = "Terms of Service";
-        body.innerText = "ఈ వెబ్‌సైట్ విద్యార్థులు మరియు ఉద్యోగార్థుల ఉచిత అభ్యాసం కోసం అందించబడుతోంది.";
+        body.innerText = "ఈ సైట్ ఉచిత విద్య మరియు నైపుణ్యాభివృద్ధి కోసం మాత్రమే అందించబడుతోంది.";
       } else if (type === 'contact') {
         title.innerText = "Contact Us";
-        body.innerText = "సలహాలు లేదా సందేహాల కోసం సంప్రదించండి: support@speakfast.english";
+        body.innerText = "సంప్రదించండి: support@speakfast.english";
       }
       modal.style.display = 'flex';
     }
